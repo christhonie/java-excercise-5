@@ -1,6 +1,9 @@
 package za.co.idealogic.javaexercise.rest;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -22,4 +25,10 @@ public class CommandResource {
         	.forEach(message -> sb.append(message).append(separator));
         return sb.toString();
     }
+    
+    @GetMapping(path = "/findAll")
+    public ResponseEntity<List<String>> findAll() {
+        return ResponseEntity.ok(persistenceService.getMessagesTheFancyWay());
+    }
+ 
 }
