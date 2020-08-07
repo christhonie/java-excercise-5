@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: Java Training Exercise 4
+  jpa:
+    hibernate.ddl-auto: update
+  datasource:
+    url: jdbc:mysql://localhost:3306/java-exercise-4
+    username: app
+    password: app
